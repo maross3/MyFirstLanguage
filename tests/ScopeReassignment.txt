@@ -1,0 +1,16 @@
+var cat = "kitty";
+var appleCount = 24;
+
+{
+	appleCount = appleCount + 1;
+	cat = "scaredey " + cat;
+	var iGenErrors = 99;
+}
+
+print appleCount; // 25
+print cat; // scaredey kitty
+
+var nilVal;
+print nilVal; // nil
+
+print iGenErrors; // error
