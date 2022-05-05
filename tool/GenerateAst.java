@@ -16,7 +16,7 @@ public class GenerateAst {
 //	}
 		// can use windows path, eg. "C:/User/Mike/Workspace"
 		// define string directory here
-		//String outputDir = args[0];
+		// String outputDir = args[0];
 		String outputDir = "./src/myfirstlang";
 		defineAst(outputDir, "Expr", Arrays.asList(
 				"Assign   : Token name, Expr value",

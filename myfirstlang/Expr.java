@@ -1,7 +1,5 @@
 package myfirstlang;
 
-import java.util.List;
-
 abstract class Expr {
   interface Visitor<R> {
     R visitAssignExpr(Assign expr);

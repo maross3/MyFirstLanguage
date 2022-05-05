@@ -14,7 +14,7 @@ public class Lox {
 	static boolean hadRuntimeError = false;
 	public static void main(String[] args) throws IOException {
 		
-			String dir = "./tests/ScopeReassignment.txt";
+			String dir = "./src/tests/ScopeReassignment.txt";
 			runFile(dir);
 			// runPrompt();				
 					
@@ -42,7 +42,7 @@ public class Lox {
 		BufferedReader reader = new BufferedReader(input);
 		
 		for(;;) {
-			System.out.print("\n> ");
+			System.out.print("> ");
 			String line = reader.readLine();
 			 // control-d means end of file, so line == null
 			if(line == null) break;
