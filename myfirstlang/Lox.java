@@ -13,7 +13,11 @@ public class Lox {
 	static boolean hadError = false;
 	static boolean hadRuntimeError = false;
 	public static void main(String[] args) throws IOException {
-			runPrompt();
+		
+			String dir = "./tests/ScopeReassignment.txt";
+			runFile(dir);
+			// runPrompt();				
+					
 //			if (args.length < 1) {
 //				System.out.println("Usage: jlox [script]");
 //				System.exit(64);
@@ -53,11 +57,11 @@ public class Lox {
 		List<Token> tokens = scanner.scanTokens();
 
 		Parser parser = new Parser(tokens);
-		Expr expression = parser.parse();
+		List<Stmt> statements = parser.parse();
 		
 		if(hadError) return;
 		
-		interpreter.interpret(expression);
+		interpreter.interpret(statements);
 		//System.out.println(new AstPrinter().print(expression));
 //		for(Token token : tokens) {
 //			System.out.print(token);
@@ -83,8 +87,8 @@ public class Lox {
 	}
 	
 	static void runtimeError(RuntimeError error) {
-		System.err.println(error.getMessage() +
-				"\n[line " + error.token.line + "]");
+		System.err.println("\n" + error.getMessage() +
+				" [line " + error.token.line + "]\n");
 		hadRuntimeError = true;
 	}
 

@@ -17,14 +17,22 @@ public class GenerateAst {
 		// can use windows path, eg. "C:/User/Mike/Workspace"
 		// define string directory here
 		//String outputDir = args[0];
-		String outputDir = "C:/Users/maros/eclipse-workspace/MyFirstLang/src/myfirstlang";
+		String outputDir = "./src/myfirstlang";
 		defineAst(outputDir, "Expr", Arrays.asList(
+				"Assign   : Token name, Expr value",
 				"Binary   : Expr left, Token operator, Expr right",
 				"Grouping : Expr expression",
 				"Literal  : Object value",
 				"Unary    : Token operator, Expr right",
-				"CrazyExpr: Token crazy, Expr nothing"
+				"Variable : Token name"
 				));
+		
+	    defineAst(outputDir, "Stmt", Arrays.asList(
+	    		  "Block      : List<Stmt> statements",
+	    	      "Expression : Expr expression",
+	    	      "Print      : Expr expression",
+	    	      "Var        : Token name, Expr initializer"
+	    	    ));
 	}
 	
 	private static void defineAst( String outputDir, String baseName,
